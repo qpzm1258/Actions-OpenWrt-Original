@@ -14,12 +14,12 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 # 更新并安装源
-# ./scripts/feeds clean
-# ./scripts/feeds update -a && ./scripts/feeds install -a
+./scripts/feeds clean
+./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 添加openclash
 cd ..
