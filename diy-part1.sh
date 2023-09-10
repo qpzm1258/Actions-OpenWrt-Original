@@ -17,6 +17,10 @@ sed -i "/helloworld/d" "feeds.conf.default"
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
+# 使用官方luci
+sed -i "/luci/d" "feeds.conf.default"
+echo 'src-git luci https://git.openwrt.org/project/luci.git' >>feeds.conf.default
+
 # 更新并安装源
 ./scripts/feeds clean
 ./scripts/feeds update -a && ./scripts/feeds install -a
