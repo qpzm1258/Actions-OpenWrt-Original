@@ -129,10 +129,9 @@ EOF
 # 编译打印机支持
 cat >> .config <<EOF	
 CONFIG_PACKAGE_kmod-lp=y
-# CONFIG_PACKAGE_kmod-usb-printer=y
-CONFIG_PACKAGE_p910nd=y
-CONFIG_PACKAGE_luci-app-p910nd=y
-CONFIG_PACKAGE_	luci-i18n-p910nd-zh-cn=y
+CONFIG_PACKAGE_kmod-usb-printer=y
+CONFIG_PACKAGE_luci-app-p910nd_INCLUDE_p910nd=y
+CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn=y
 EOF
 
 # 多文件系统支持:
@@ -146,13 +145,13 @@ EOF
 # EOF
 
 # USB3.0支持:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_kmod-usb-ohci=y
-# CONFIG_PACKAGE_kmod-usb-ohci-pci=y
-# CONFIG_PACKAGE_kmod-usb2=y
-# CONFIG_PACKAGE_kmod-usb2-pci=y
-# CONFIG_PACKAGE_kmod-usb3=y
-# EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-usb-ohci=y
+CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+CONFIG_PACKAGE_kmod-usb2=y
+CONFIG_PACKAGE_kmod-usb2-pci=y
+CONFIG_PACKAGE_kmod-usb3=y
+EOF
 
 # 第三方插件选择:
 cat >> .config <<EOF
