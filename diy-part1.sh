@@ -29,7 +29,7 @@ rm -rf OpenClash
 cd openwrt
 
 # 替换更新默认argon主题
-rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon -b 18.06
+rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon -b master
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 替换更新passwall和ssrplus+
@@ -128,9 +128,10 @@ EOF
 
 # 编译打印机支持
 cat >> .config <<EOF	
+CONFIG_PACKAGE_p910nd=y
 CONFIG_PACKAGE_kmod-lp=y
 CONFIG_PACKAGE_kmod-usb-printer=y
-CONFIG_PACKAGE_luci-app-p910nd_INCLUDE_p910nd=y
+CONFIG_PACKAGE_luci-app-p910nd=y
 CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn=y
 EOF
 
