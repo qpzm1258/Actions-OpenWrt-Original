@@ -116,6 +116,8 @@ EOF
 
 # IPv6支持:
 cat >> .config <<EOF
+CONFIG_PACKAGE_dnsmasq
+CONFIG_PACKAGE_dnsmasq-full
 CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
 CONFIG_PACKAGE_ipv6helper=y
 EOF
