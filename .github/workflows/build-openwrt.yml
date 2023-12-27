@@ -100,6 +100,13 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+    - name: Compile i18n
+      id: i18n
+      run: |
+        ls -l openwrt/
+        cd openwrt/feeds/luci/
+        ./build/i18n-add-language.sh "zh-cn"
+
     - name: Compile the firmware
       id: compile
       run: |
