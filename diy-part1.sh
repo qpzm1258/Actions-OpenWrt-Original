@@ -52,6 +52,7 @@ sed -i 's#url-test#fallback#g' package/luci-app-openclash/root/usr/share/opencla
 # sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计数据存放默认位置
 # sed -i 's@background-color: #e5effd@background-color: #f8fbfe@g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
 # sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
+cat "LUCI_LANG.zh_Hans=Native Language Name" >> ./feeds/luci/luci.mk
 
 #创建自定义配置文件 - OpenWrt-x86-64
 
