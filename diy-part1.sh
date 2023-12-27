@@ -123,6 +123,7 @@ EOF
 # 替换dnsmasq-full:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci=y
+CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
 EOF
 
 # IPv6支持:
@@ -229,6 +230,7 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-syncdial=y
 CONFIG_PACKAGE_luci-app-macvlan=y
 CONFIG_PACKAGE_luci-app-mwan3=y
+CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
 EOF
 
 # 常用LuCI插件:
