@@ -44,7 +44,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 # rm -rf feeds/packages/net/haproxy && svn co https://github.com/lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
 
 #添加lean的包（测试）
-git clone --depth 1 --filter=blob:none --sparse https://github.com/coolsnowwolf/lede/package/lean package/lean
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean
 
 # 自定义定制选项
 #sed -i 's#192.168.1.1#192.168.3.105#g' package/base-files/files/bin/config_generate #定制默认IP
@@ -55,7 +55,6 @@ sed -i 's#url-test#fallback#g' package/luci-app-openclash/root/usr/share/opencla
 # sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计数据存放默认位置
 # sed -i 's@background-color: #e5effd@background-color: #f8fbfe@g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
 # sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
-cat "LUCI_LANG.zh_Hans=Native Language Name" >> ./feeds/luci/luci.mk #使用简体中文
 
 #创建自定义配置文件 - OpenWrt-x86-64
 
