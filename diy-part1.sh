@@ -121,10 +121,10 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_dnsmasq-full=y
 EOF
 
-# 替换dnsmasq-full:
+# 配置luci:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci=y
-CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
+CONFIG_LUCI_LANG_zh_Hans=y
 EOF
 
 # IPv6支持:
@@ -249,6 +249,7 @@ CONFIG_PACKAGE_luci-app-frps=y
 CONFIG_PACKAGE_luci-app-udpxy=y
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
 CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
+# CONFIG_PACKAGE_ttyd=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
 CONFIG_PACKAGE_kmod-usb-printer=y
