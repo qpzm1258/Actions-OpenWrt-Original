@@ -43,6 +43,9 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 # 替换更新haproxy默认版本
 # rm -rf feeds/packages/net/haproxy && svn co https://github.com/lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
 
+#添加lean的包（测试）
+git clone --depth 1 --filter=blob:none --sparse https://github.com/coolsnowwolf/lede/package/lean package/lean
+
 # 自定义定制选项
 #sed -i 's#192.168.1.1#192.168.3.105#g' package/base-files/files/bin/config_generate #定制默认IP
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
