@@ -17,16 +17,16 @@ sed -i "/helloworld/d" "feeds.conf.default"
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
-#添加lean的包（测试）
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-adbyby-plus  feeds/packages/luci/applications/luci-app-adbyby-plus
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-syncdial feeds/packages/luci/applications/luci-app-syncdial
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-vlmcsd feeds/packages/luci/applications/luci-app-vlmcsd
-svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd feeds/packages/net/package/vkncsd
-
 # 更新并安装源
 ./scripts/feeds clean
 ./scripts/feeds update -a && ./scripts/feeds install -a
+
+#添加lean的包（测试）
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-adbyby-plus  package/lean/luci-app-adbyby-plus
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-syncdial feeds/packages/luci/applications/luci-app-syncdial
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-vlmcsd feeds/packages/luci/applications/luci-app-vlmcsd
+svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd feeds/packages/net/package/vkncsd
 
 # 添加openclash
 cd ..
