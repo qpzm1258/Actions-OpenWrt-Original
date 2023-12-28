@@ -45,6 +45,10 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 
 #添加lean的包（测试）
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean
+svn co https://github.com/coolsnowwolf/luci/trunk/luci/applications/luci-app-adbyby-plus  package/luci/luci-app-adbyby-plus
+svn co https://github.com/coolsnowwolf/luci/trunk/luci/applications/luci-app-syncdial package/luci/luci-app-syncdial
+svn co https://github.com/coolsnowwolf/luci/trunk/luci/applications/luci-app-vlmcsd package/luci/luci-app-vlmcsd
+svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd package/net/vkncsd
 
 # 自定义定制选项
 #sed -i 's#192.168.1.1#192.168.3.105#g' package/base-files/files/bin/config_generate #定制默认IP
