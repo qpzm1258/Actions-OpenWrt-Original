@@ -234,6 +234,7 @@ EOF
 
 # 多拨
 cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-macvlan=y
 CONFIG_PACKAGE_luci-app-syncdial=y
 CONFIG_PACKAGE_luci-app-macvlan=y
 CONFIG_PACKAGE_luci-app-mwan3=y
