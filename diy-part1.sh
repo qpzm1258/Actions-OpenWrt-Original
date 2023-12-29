@@ -23,10 +23,10 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 
 #添加lean的包（测试）
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-adbyby-plus  package/lean/luci-app-adbyby-plus
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-adbyby-plus  feeds/packages/luci/applications/luci-app-adbyby-plus
 svn co https://github.com/pppoex/openwrt-packages/trunk/luci-app-syncdial feeds/packages/luci/applications/luci-app-syncdial
 svn co https://github.com/ssuperh/luci-app-vlmcsd-new/trunk/luci-app-vlmcsd feeds/packages/luci/applications/luci-app-vlmcsd
-svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd feeds/packages/net/package/vkncsd
+svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd feeds/packages/net/package/vlmcsd
 
 # 添加openclash
 cd ..
@@ -329,6 +329,8 @@ CONFIG_PACKAGE_libcap-bin=y
 CONFIG_PACKAGE_qemu-ga=y
 CONFIG_PACKAGE_iptables-mod-extra=y
 CONFIG_PACKAGE_ttyd=y
+CONFIG_PACKAGE_vlmcsd=y
+CONFIG_PACKAGE_adbyby=y
 EOF
 
 # 其他软件包:
