@@ -195,7 +195,7 @@ EOF
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-# CONFIG_PACKAGE_https-dns-proxy=y
+CONFIG_PACKAGE_https-dns-proxy=y
 # CONFIG_PACKAGE_kcptun-client=y
 # CONFIG_PACKAGE_chinadns-ng=y
 # CONFIG_PACKAGE_haproxy=y
@@ -242,6 +242,8 @@ CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
 CONFIG_PACKAGE_kmod-usb-printer=y
+CONFIG_PACKAGE_luci-app-https-dns-proxy=y
+CONFIG_PACKAGE_luci-app-wireguard=y
 # CONFIG_PACKAGE_luci-app-zerotier is not set #zerotier内网穿透
 # CONFIG_PACKAGE_luci-app-sfe is not set #高通开源的 Shortcut FE 转发加速引擎
 # CONFIG_PACKAGE_luci-app-flowoffload is not set #开源 Linux Flow Offload 驱动
