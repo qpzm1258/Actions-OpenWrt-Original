@@ -309,6 +309,8 @@ CONFIG_PACKAGE_libcap-bin=y
 CONFIG_PACKAGE_qemu-ga=y
 CONFIG_PACKAGE_iptables-mod-extra=y
 CONFIG_PACKAGE_ttyd=y
+CONFIG_PACKAGE_e2fsprogs=y
+CONFIG_PACKAGE_cfdisk=y
 EOF
 
 # 其他软件包:
