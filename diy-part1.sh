@@ -179,7 +179,7 @@ EOF
 # EOF
 
 # Passwall插件:
-# cat >> .config <<EOF
+cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-passwall=y
 CONFIG_PACKAGE_luci-app-passwall2=y #Passwall2
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
@@ -216,7 +216,7 @@ CONFIG_PACKAGE_luci-app-passwall2=y #Passwall2
 # CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
 # CONFIG_PACKAGE_pdnsd-alt=y
 # CONFIG_PACKAGE_dns2socks=y
-# EOF
+EOF
 
 # 多拨
 cat >> .config <<EOF
