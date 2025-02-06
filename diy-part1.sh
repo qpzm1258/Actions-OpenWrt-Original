@@ -30,6 +30,9 @@ mv ./OpenClash/luci-app-openclash ./openwrt/package/luci-app-openclash
 rm -rf OpenClash
 git clone https://github.com/fw876/helloworld
 mv ./helloworld/luci-app-ssr-plus ./openwrt/package/luci-app-ssr-plus
+mv ./helloworld/lua-neturl ./openwrt/package/lua-neturl
+mv ./helloworld/redsocks2 ./openwrt/package/redsocks2
+mv ./helloworld/shadow-tls ./openwrt/package/shadow-tls
 rm -rf helloworld
 cd openwrt
 
