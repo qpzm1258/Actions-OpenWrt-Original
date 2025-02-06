@@ -282,7 +282,7 @@ CONFIG_PACKAGE_ddns-scripts_dnspod=y
 # CONFIG_PACKAGE_luci-app-pptp-server is not set #PPTP VPN 服务器
 # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set #ipsec VPN服务
 # CONFIG_PACKAGE_luci-app-openvpn-server is not set #openvpn服务
-CONFIG_PACKAGE_luci-app-softether=y #SoftEtherVPN服务器
+# CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
 #
 # 文件共享相关(禁用):
 #
