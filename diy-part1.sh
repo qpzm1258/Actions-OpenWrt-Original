@@ -28,6 +28,9 @@ cd ..
 git clone https://github.com/vernesong/OpenClash
 mv ./OpenClash/luci-app-openclash ./openwrt/package/luci-app-openclash
 rm -rf OpenClash
+git clone https://github.com/fw876/helloworld
+mv ./helloworld/luci-app-ssr-plus ./openwrt/package/luci-app-ssr-plus
+rm -rf helloworld
 cd openwrt
 
 
@@ -170,13 +173,13 @@ cat >> .config <<EOF
 EOF
 
 # ShadowsocksR插件:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-ssr-plus=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-# EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-ssr-plus=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+EOF
 
 # Passwall插件:
 cat >> .config <<EOF
@@ -276,7 +279,7 @@ CONFIG_PACKAGE_ddns-scripts_dnspod=y
 # CONFIG_PACKAGE_luci-app-pptp-server is not set #PPTP VPN 服务器
 # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set #ipsec VPN服务
 # CONFIG_PACKAGE_luci-app-openvpn-server is not set #openvpn服务
-CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
+CONFIG_PACKAGE_luci-app-softether=y #SoftEtherVPN服务器
 #
 # 文件共享相关(禁用):
 #
