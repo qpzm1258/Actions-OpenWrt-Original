@@ -31,10 +31,10 @@ rm -rf OpenClash
 
 # 添加SSRP
 git clone https://github.com/fw876/helloworld --depth=1
-mv ./helloworld/luci-app-ssr-plus ./openwrt/package/helloworld/luci-app-ssr-plus
-mv ./helloworld/lua-neturl ./openwrt/package/helloworld/lua-neturl
-mv ./helloworld/redsocks2 ./openwrt/package/helloworld/redsocks2
-mv ./helloworld/shadow-tls ./openwrt/package/helloworld/shadow-tls
+mv ./helloworld/luci-app-ssr-plus ./openwrt/package/luci-app-ssr-plus
+mv ./helloworld/lua-neturl ./openwrt/package/lua-neturl
+mv ./helloworld/redsocks2 ./openwrt/package/redsocks2
+mv ./helloworld/shadow-tls ./openwrt/package/shadow-tls
 rm -rf helloworld
 cd openwrt
 
