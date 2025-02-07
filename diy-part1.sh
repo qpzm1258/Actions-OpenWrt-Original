@@ -40,7 +40,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 # rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
 # 添加passwall依赖库
-git https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages --depth=1
+git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages --depth=1
 git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall --depth=1
 git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall2 --depth=1
 # git clone https://github.com/kenzok8/small package/small
