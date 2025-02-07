@@ -16,8 +16,8 @@ sed -i "/helloworld/d" "feeds.conf.default"
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git helloworld https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.conf.default
 
 # 更新并安装源
 ./scripts/feeds clean
@@ -25,14 +25,16 @@ echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.
 
 # 添加openclash
 cd ..
-git clone https://github.com/vernesong/OpenClash
+git clone https://github.com/vernesong/OpenClash --depth=1
 mv ./OpenClash/luci-app-openclash ./openwrt/package/luci-app-openclash
 rm -rf OpenClash
-git clone https://github.com/fw876/helloworld
-mv ./helloworld/luci-app-ssr-plus ./openwrt/package/luci-app-ssr-plus
-mv ./helloworld/lua-neturl ./openwrt/package/lua-neturl
-mv ./helloworld/redsocks2 ./openwrt/package/redsocks2
-mv ./helloworld/shadow-tls ./openwrt/package/shadow-tls
+
+# 添加SSRP
+git clone https://github.com/fw876/helloworld --depth=1
+mv ./helloworld/luci-app-ssr-plus ./openwrt/package/helloworld/luci-app-ssr-plus
+mv ./helloworld/lua-neturl ./openwrt/package/helloworld/lua-neturl
+mv ./helloworld/redsocks2 ./openwrt/package/helloworld/redsocks2
+mv ./helloworld/shadow-tls ./openwrt/package/helloworld/shadow-tls
 rm -rf helloworld
 cd openwrt
 
@@ -42,8 +44,14 @@ rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerryk
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 替换更新passwall和ssrplus+
+git clone https://github.com/xiaorouji/openwrt-passwall --depth=1
 rm -rf feeds/luci/applications/luci-app-passwall
+mv ./openwrt-passwall/luci-app-passwall feeds/luci/applications/luci-app-passwall
+rm -rf openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall2 --depth=1
 rm -rf feeds/luci/applications/luci-app-passwall2
+mv ./openwrt-passwall2/luci-app-passwall2 feeds/luci/applications/luci-app-passwall2
+rm -rf openwrt-passwall2
 # rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 # rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
