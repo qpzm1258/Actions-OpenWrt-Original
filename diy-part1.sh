@@ -14,8 +14,8 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i "/helloworld/d" "feeds.conf.default"
 # Add a feed source
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-# echo 'src-git helloworld https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+# echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+echo 'src-git openwrt-passwall-packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 # echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.conf.default
 
@@ -36,13 +36,14 @@ rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerryk
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 替换更新passwall和ssrplus+
+git clone https://github.com/fw876/helloworld package/helloworld --depth=1
 # rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 # rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
 # 添加passwall依赖库
-git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages --depth=1
 git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall --depth=1
 git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall2 --depth=1
+
 # git clone https://github.com/kenzok8/small package/small
 # svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/small
 
