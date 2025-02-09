@@ -14,8 +14,8 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i "/helloworld/d" "feeds.conf.default"
 # Add a feed source
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-# echo 'src-git helloworld https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+# echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+echo 'src-git passwallPKG https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 # echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.conf.default
 
@@ -30,17 +30,23 @@ mv ./OpenClash/luci-app-openclash ./openwrt/package/luci-app-openclash
 rm -rf OpenClash
 cd openwrt
 
+# 添加lean的包
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-adbyby-plus  feeds/packages/luci/applications/luci-app-adbyby-plus
+svn co https://github.com/pppoex/openwrt-packages/trunk/luci-app-syncdial feeds/packages/luci/applications/luci-app-syncdial
+svn co https://github.com/ssuperh/luci-app-vlmcsd-new/trunk/luci-app-vlmcsd feeds/packages/luci/applications/luci-app-vlmcsd
+svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd feeds/packages/net/package/vlmcsd
 
 # 替换更新默认argon主题
 rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 替换更新passwall和ssrplus+
+git clone https://github.com/fw876/helloworld package/helloworld --depth=1
 # rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 # rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
 # 添加passwall依赖库
-git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages --depth=1
 git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall --depth=1
 git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall2 --depth=1
 # git clone https://github.com/kenzok8/small package/small
@@ -107,8 +113,8 @@ EOF
 
 # 设置固件大小:
 cat >> .config <<EOF
-CONFIG_TARGET_KERNEL_PARTSIZE=32
-CONFIG_TARGET_ROOTFS_PARTSIZE=160
+# CONFIG_TARGET_KERNEL_PARTSIZE=32
+CONFIG_TARGET_ROOTFS_PARTSIZE=235
 EOF
 
 # 固件压缩:
@@ -184,7 +190,7 @@ EOF
 # Passwall插件:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-passwall=y
-# CONFIG_PACKAGE_luci-app-passwall2=y #Passwall2
+CONFIG_PACKAGE_luci-app-passwall2=y #Passwall2
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
@@ -318,6 +324,13 @@ CONFIG_PACKAGE_iptables-mod-extra=y
 CONFIG_PACKAGE_ttyd=y
 CONFIG_PACKAGE_e2fsprogs=y
 CONFIG_PACKAGE_cfdisk=y
+CONFIG_PACKAGE_fdisk=y
+CONFIG_PACKAGE_lsblk=y
+CONFIG_PACKAGE_resize2fs=y
+CONFIG_PACKAGE_losetup=y
+CONFIG_PACKAGE_blkid=y
+CONFIG_PACKAGE_f2fs-tools=y
+CONFIG_PACKAGE_tree=y
 EOF
 
 # 其他软件包:
