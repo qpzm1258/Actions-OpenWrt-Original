@@ -47,6 +47,9 @@ git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwal
 # git clone https://github.com/kenzok8/small package/small
 # svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/small
 
+# 添加leans的包
+svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd packages/vlmcsd --depth=1
+
 # 替换更新haproxy默认版本
 # rm -rf feeds/packages/net/haproxy && svn co https://github.com/lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
 
@@ -141,6 +144,12 @@ CONFIG_PACKAGE_kmod-lp=y
 CONFIG_PACKAGE_kmod-usb-printer=y
 CONFIG_PACKAGE_luci-app-p910nd=y
 CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn=y
+EOF
+
+# 添加cpu控制
+cat >> .config <<EOF	
+CONFIG_PACKAGE_luci-app-cpufreq=y
+CONFIG_PACKAGE_luci-app-cpulimit=y
 EOF
 
 # 多文件系统支持:
@@ -293,6 +302,8 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
+CONFIG_PACKAGE_luci=y
+CONFIG_LUCI_LANG_zh-cn=y
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
 CONFIG_PACKAGE_luci-theme-material=y
