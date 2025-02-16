@@ -113,7 +113,7 @@ EOF
 
 # 设置固件大小:
 cat >> .config <<EOF
-# CONFIG_TARGET_KERNEL_PARTSIZE=16
+CONFIG_TARGET_KERNEL_PARTSIZE=16
 CONFIG_TARGET_ROOTFS_PARTSIZE=235
 EOF
 
@@ -309,7 +309,7 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci=y
 CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
 CONFIG_LUCI_LANG_zh_Hans=y
-PACKAGE_default-settings-chn=y
+CONFIG_PACKAGE_default-settings-chn=y
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
 CONFIG_PACKAGE_luci-theme-material=y
