@@ -152,17 +152,19 @@ EOF
 cat >> .config <<EOF	
 CONFIG_PACKAGE_luci-app-cpufreq=y
 CONFIG_PACKAGE_luci-app-cpulimit=y
+CONFIG_PACKAGE_luci-app-cpufreq-zh-cn=y
+CONFIG_PACKAGE_luci-app-cpulimit-zh-cn=y
 EOF
 
 # 多文件系统支持:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_kmod-fs-nfs=y
-# CONFIG_PACKAGE_kmod-fs-nfs-common=y
-# CONFIG_PACKAGE_kmod-fs-nfs-v3=y
-# CONFIG_PACKAGE_kmod-fs-nfs-v4=y
-# CONFIG_PACKAGE_kmod-fs-ntfs=y
-# CONFIG_PACKAGE_kmod-fs-squashfs=y
-# EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-fs-nfs=y
+CONFIG_PACKAGE_kmod-fs-nfs-common=y
+CONFIG_PACKAGE_kmod-fs-nfs-v3=y
+CONFIG_PACKAGE_kmod-fs-nfs-v4=y
+CONFIG_PACKAGE_kmod-fs-ntfs=y
+CONFIG_PACKAGE_kmod-fs-squashfs=y
+EOF
 
 # USB3.0支持:
 cat >> .config <<EOF
@@ -244,7 +246,7 @@ EOF
 cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 # CONFIG_PACKAGE_luci-app-webadmin is not set #Web管理页面设置
-CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
+CONFIG_PACKAGE_luci-app-vlmcsd=y #KMS激活服务器
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
 CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
@@ -305,6 +307,7 @@ EOF
 # LuCI主题:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci=y
+CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
 CONFIG_LUCI_LANG_zh-cn=y
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
