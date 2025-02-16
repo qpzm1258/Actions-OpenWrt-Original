@@ -342,12 +342,6 @@ CONFIG_PACKAGE_losetup=y
 CONFIG_PACKAGE_blkid=y
 CONFIG_PACKAGE_f2fs-tools=y
 CONFIG_PACKAGE_tree=y
-CONFIG_PACKAGE_lm-sensors=y
-CONFIG_PACKAGE_libpam=y
-CONFIG_PACKAGE_liblzma=y
-CONFIG_PACKAGE_libnetsnmp=y
-CONFIG_PACKAGE_glib2=y
-CONFIG_PACKAGE_libgpiod=y
 EOF
 
 # 其他软件包:
