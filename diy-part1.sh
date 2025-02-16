@@ -47,9 +47,6 @@ git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwal
 # git clone https://github.com/kenzok8/small package/small
 # svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/small
 
-# 添加leans的包
-svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd packages/vlmcsd --depth=1
-
 # 替换更新haproxy默认版本
 # rm -rf feeds/packages/net/haproxy && svn co https://github.com/lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
 
