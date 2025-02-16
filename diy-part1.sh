@@ -199,9 +199,12 @@ EOF
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-passwall=y
 # CONFIG_PACKAGE_luci-app-passwall2=y #Passwall2
-CONFIG_PACKAGE_v2ray-geodata=y
-CONFIG_PACKAGE_kmod-ipt-iprange=y
-CONFIG_PACKAGE_kmod-ipt-socket=y
+CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
@@ -346,6 +349,12 @@ CONFIG_PACKAGE_losetup=y
 CONFIG_PACKAGE_blkid=y
 CONFIG_PACKAGE_f2fs-tools=y
 CONFIG_PACKAGE_tree=y
+CONFIG_PACKAGE_lm-sensors=y
+CONFIG_PACKAGE_libpam=y
+CONFIG_PACKAGE_liblzma=y
+CONFIG_PACKAGE_libnetsnmp=y
+CONFIG_PACKAGE_glib2=y
+CONFIG_PACKAGE_libgpiod=y
 EOF
 
 # 其他软件包:
