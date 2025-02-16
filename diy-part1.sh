@@ -30,13 +30,6 @@ mv ./OpenClash/luci-app-openclash ./openwrt/package/luci-app-openclash
 rm -rf OpenClash
 cd openwrt
 
-# 添加lean的包
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-adbyby-plus  feeds/packages/luci/applications/luci-app-adbyby-plus
-svn co https://github.com/pppoex/openwrt-packages/trunk/luci-app-syncdial feeds/packages/luci/applications/luci-app-syncdial
-svn co https://github.com/ssuperh/luci-app-vlmcsd-new/trunk/luci-app-vlmcsd feeds/packages/luci/applications/luci-app-vlmcsd
-svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd feeds/packages/net/package/vlmcsd
-
 # 替换更新默认argon主题
 rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
