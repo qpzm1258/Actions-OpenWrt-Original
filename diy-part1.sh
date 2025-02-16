@@ -148,6 +148,12 @@ CONFIG_PACKAGE_luci-app-p910nd=y
 CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn=y
 EOF
 
+# 添加cpu控制
+cat >> .config <<EOF	
+CONFIG_PACKAGE_luci-app-cpufreq=y
+CONFIG_PACKAGE_luci-app-cpulimit=y
+EOF
+
 # 多文件系统支持:
 # cat >> .config <<EOF
 # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -298,6 +304,8 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
+CONFIG_PACKAGE_luci=y
+CONFIG_LUCI_LANG_zh-cn=y
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
 CONFIG_PACKAGE_luci-theme-material=y
