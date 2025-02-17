@@ -23,12 +23,20 @@ echo 'src-git passwallPKG https://github.com/xiaorouji/openwrt-passwall-packages
 ./scripts/feeds clean
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-# 添加openclash
+
 cd ..
+# 添加openclash
 git clone https://github.com/vernesong/OpenClash --depth=1
 mv ./OpenClash/luci-app-openclash ./openwrt/package/luci-app-openclash
 rm -rf OpenClash
+# 添加lean的包
+git clone https://github.com/coolsnowwolf/lede --depth=1
+mv ./lede/package/lean ./openwrt/package/lean
+rm -rf lede
 cd openwrt
+
+git clone https://github.com/DokiDuck/luci-app-vlmcsd package/luci-app-syncdial --depth=1
+git clone https://github.com/rufengsuixing/luci-app-syncdial  package/luci-app-syncdial --depth=1
 
 # 替换更新默认argon主题
 rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
