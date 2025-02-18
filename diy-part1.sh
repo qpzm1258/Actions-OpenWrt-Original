@@ -35,7 +35,7 @@ mv ./lede/package/lean ./openwrt/package/lean
 rm -rf lede
 cd openwrt
 
-git clone https://github.com/DokiDuck/luci-app-vlmcsd package/luci-app-syncdial --depth=1
+git clone https://github.com/DokiDuck/luci-app-vlmcsd package/luci-app-vlmcsd --depth=1
 git clone https://github.com/rufengsuixing/luci-app-syncdial  package/luci-app-syncdial --depth=1
 
 # 替换更新默认argon主题
