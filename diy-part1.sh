@@ -280,6 +280,7 @@ CONFIG_PACKAGE_kmod-usb-printer=y
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
 # CONFIG_PACKAGE_luci-app-sqm is not set #SQM智能队列管理
 CONFIG_PACKAGE_luci-proto-wireguard=y
+CONFIG_PACKAGE_qrencode=y
 # 
 # DDNS插件
 #
