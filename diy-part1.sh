@@ -15,7 +15,7 @@
 sed -i "/helloworld/d" "feeds.conf.default"
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-echo 'src-git passwallPKG https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+# echo 'src-git passwallPKG https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 # echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.conf.default
 
@@ -24,24 +24,24 @@ echo 'src-git passwallPKG https://github.com/xiaorouji/openwrt-passwall-packages
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 添加openclash
-cd ..
-git clone https://github.com/vernesong/OpenClash --depth=1
-mv ./OpenClash/luci-app-openclash ./openwrt/package/luci-app-openclash
-rm -rf OpenClash
-cd openwrt
+# cd ..
+# git clone https://github.com/vernesong/OpenClash --depth=1
+# mv ./OpenClash/luci-app-openclash ./openwrt/package/luci-app-openclash
+# rm -rf OpenClash
+# cd openwrt
 
 # 替换更新默认argon主题
-rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+# rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+# git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 替换更新passwall和ssrplus+
-git clone https://github.com/fw876/helloworld package/helloworld --depth=1
+# git clone https://github.com/fw876/helloworld package/helloworld --depth=1
 # rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 # rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
 # 添加passwall依赖库
-git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall --depth=1
-git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall2 --depth=1
+# git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall --depth=1
+# git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall2 --depth=1
 # git clone https://github.com/kenzok8/small package/small
 # svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/small
 
@@ -52,7 +52,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwal
 sed -i 's#192.168.1.1#192.168.3.105#g' package/base-files/files/bin/config_generate #定制默认IP
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
 # sed -i 's#0 6#0 2#g' package/lean/luci-app-adbyby-plus/root/etc/init.d/adbyby #修改adbyby自动更新时间到凌晨2点
-sed -i 's#url-test#fallback#g' package/luci-app-openclash/root/usr/share/openclash/yml_proxys_set.sh #修改openclash自动生成配置中的urltest为fallback
+# sed -i 's#url-test#fallback#g' package/luci-app-openclash/root/usr/share/openclash/yml_proxys_set.sh #修改openclash自动生成配置中的urltest为fallback
 # sed -i 's#option commit_interval 24h#option commit_interval 10m#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计写入为10分钟
 # sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计数据存放默认位置
 # sed -i 's@background-color: #e5effd@background-color: #f8fbfe@g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
