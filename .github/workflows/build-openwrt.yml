@@ -51,7 +51,7 @@ jobs:
         # these default to FALSE, because their failures are hard to
         # trace back to this action — see the FAQ below before enabling
         preinstalled-runtimes: false
-        swap-storage: false
+        swap-storage: true
           
     # - name: Delete huge unnecessary tools folder
     #   run: rm -rf /opt/hostedtoolcache
