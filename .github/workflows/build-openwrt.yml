@@ -41,18 +41,20 @@ jobs:
     - name: Free Disk Space
       uses: jlumbroso/free-disk-space@main
       with:
-        tool-cache: true
-
-          # all of these default to true, but feel free to set to
-          # false if necessary for your workflow
+        # these default to true — turn off whatever you actually need
         android: true
         dotnet: true
         haskell: true
         large-packages: true
-        swap-storage: true
+        docker-images: true
+
+        # these default to FALSE, because their failures are hard to
+        # trace back to this action — see the FAQ below before enabling
+        preinstalled-runtimes: false
+        swap-storage: false
           
-    - name: Delete huge unnecessary tools folder
-      run: rm -rf /opt/hostedtoolcache
+    # - name: Delete huge unnecessary tools folder
+    #   run: rm -rf /opt/hostedtoolcache
     
     - name: Checkout
       uses: actions/checkout@v5
