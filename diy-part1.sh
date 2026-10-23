@@ -356,7 +356,6 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_kmod-mt7921e=y
 CONFIG_PACKAGE_kmod-mt7922-firmware=y
 CONFIG_PACKAGE_hostapd=y
-CONFIG_PACKAGE_wpad-openssl=y
 CONFIG_PACKAGE_luci=y
 CONFIG_PACKAGE_iw=y
 CONFIG_PACKAGE_wireless-tools=y
