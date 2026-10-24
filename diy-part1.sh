@@ -35,7 +35,7 @@ sed -i "/helloworld/d" "feeds.conf.default"
 # git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 替换更新passwall和ssrplus+
-# git clone https://github.com/fw876/helloworld package/helloworld --depth=1
+git clone https://github.com/fw876/helloworld package/helloworld --depth=1
 # rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 # rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
