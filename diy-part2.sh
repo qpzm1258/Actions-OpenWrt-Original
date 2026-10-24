@@ -16,3 +16,4 @@ sed -i "/passwallPKG/d" "feeds.conf.default"
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
+rm -rf feeds/luci/applications/luci-app-argon-config
