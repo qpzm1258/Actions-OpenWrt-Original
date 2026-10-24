@@ -33,7 +33,7 @@ cd openwrt
 
 # 替换更新默认argon主题
 rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+# git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 替换更新passwall和ssrplus+
 git clone https://github.com/fw876/helloworld package/helloworld --depth=1
@@ -318,7 +318,7 @@ EOF
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci=y
 CONFIG_LUCI_LANG_zh-cn=y
-CONFIG_PACKAGE_luci-theme-argon=y
+# CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
 CONFIG_PACKAGE_luci-theme-material=y
 # CONFIG_PACKAGE_luci-theme-netgear is not set
